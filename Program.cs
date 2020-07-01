@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Aula_27_28_29_30
 {
@@ -11,7 +12,15 @@ namespace Aula_27_28_29_30
             p.Nome = "Celular";
             p.Preco = 1.500f;
 
-            p.Cadastrar(p);
+            // p.Cadastrar(p);
+            p.Remover("Celular");
+
+            List<Produto> lista = p.Filtrar("Casa");
+            lista = p.Ler();
+
+            foreach (Produto item in lista){
+                Console.WriteLine($"R$ {item.Preco} - {item.Nome}");
+            }
         }
     }
 }
